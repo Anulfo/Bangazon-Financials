@@ -13,8 +13,8 @@ namespace BangazonProductRevenueReports
 
             //Comment out these two lines for speed purposes after the initial db creation 
             //Uncomment them and run to generate fresh data
-            // DatabaseGenerator gen = new DatabaseGenerator();
-            // gen.CreateDatabase();
+            //DatabaseGenerator gen = new DatabaseGenerator();
+            //gen.CreateDatabase();
 
             SqliteCommand cs = new SqliteCommand();
             cs.Connection = new SqliteConnection(connectionString);
@@ -44,7 +44,7 @@ namespace BangazonProductRevenueReports
                     switch (stuff)
                     {
                         case "1":
-                            cs.CommandText = "SELECT * FROM Revenue";
+                            cs.CommandText = "SELECT * FROM Revenue ";
                             cs.Connection.Open();
                             reader = cs.ExecuteReader();
                             //var proDict = new Dictionary<string, int>();
@@ -73,6 +73,8 @@ namespace BangazonProductRevenueReports
                             foreach (var y in reportValues)
                             {
                                 Console.WriteLine(string.Format("{0} was purchased with ${1}.00 in revenue.", y.Key, y.Value));
+                                Console.WriteLine(string.Format("{0} was purchased with ${1}.00 in revenue.", y.Key, y.Value));
+
                             }
                             break;
                         case "2":
