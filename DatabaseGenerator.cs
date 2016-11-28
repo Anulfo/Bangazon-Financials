@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Data.Sqlite;
 
-namespace BangazonProductRevenueReports
+namespace Bangazon_Financials
 {
     public class DatabaseGenerator
     {
@@ -41,7 +41,7 @@ namespace BangazonProductRevenueReports
                 '{customersLastName[rnd2]}', 
                 '{customerAddressNumbers[rnd4]} {customerAddressStreet[rnd5]}', 
                 {customerZipcode[rnd6]}, 
-                '{start.AddDays(rnd.Next(range))}'
+                '{start.AddDays(rnd.Next(range)).ToString("yyyy-MM-dd HH\\:mm\\:ss.fff ")}'
             );";
 
             return command;
@@ -77,8 +77,8 @@ namespace BangazonProductRevenueReports
             using (connection)
             {
                 connection.Open();
-                SqliteCommand command3 = new SqliteCommand(sql3, connection);
-                command3.ExecuteNonQuery();
+                SqliteCommand command = new SqliteCommand(sql3, connection);
+                command.ExecuteNonQuery();
             }
         }
     }
