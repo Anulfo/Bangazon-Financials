@@ -50,15 +50,15 @@ x.Exit Financial Report");
                         
                         if (selection == 2)
                         {
-                            //GetMonthlyReport.ReadInput();
+                            GetMonthlyReport.ReadInput();
                         }
                         if (selection == 3)
                         {
-                            //GetQuarterlyReport.ReadInput();
+                            GetQuarterlyReport.ReadInput();
                         }
                         if (selection == 4)
                         {
-                            //GetRevenuePerCustomer.ReadInput();
+                            GetRevenuePerCustomer.ReadInput();
                         }
                         if (selection == 5)
                         {

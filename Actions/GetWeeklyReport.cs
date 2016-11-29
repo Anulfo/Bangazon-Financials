@@ -34,7 +34,7 @@ Product                     Amount
         cs.CommandType = CommandType.Text;
         SqliteDataReader reader;
 
-        cs.CommandText = "SELECT * FROM Revenue WHERE PurchaseDate > DateTime ('now', '-7 days')";
+        cs.CommandText = "SELECT * FROM Revenue WHERE PurchaseDate > DateTime ('now', '-7 days') ORDER BY ProductName";
         cs.Connection.Open();
         reader = cs.ExecuteReader();
         while (reader.Read())
@@ -47,7 +47,6 @@ Product                     Amount
             var rawPurchaseDate = reader[9];
             var purchaseDateToString = rawPurchaseDate.ToString();
             var purchaseDateToDateTime = DateTime.Parse(purchaseDateToString);
-            var sevenDaysAgoDate = DateTime.Today.AddDays(-7);
             var straightupbull = new KeyValuePair<string, int>(productNameString, productRevenueInteger);
 
             reportValues.Add(straightupbull);
@@ -56,9 +55,10 @@ Product                     Amount
         foreach (var y in reportValues)
         {
             Console.WriteLine(String.Format("{0,-30}" + "{1:c0}", y.Key ,y.Value));
-
-        }
-        Console.ReadLine();
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Press a key to go back to MainMenu");
+            Console.ReadLine();
         }
     }
 }
