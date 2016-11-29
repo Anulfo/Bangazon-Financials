@@ -55,7 +55,7 @@ Product                     Amount
 
         foreach (var y in reportValues)
         {
-            Console.WriteLine(string.Format("{0,10}  {1,10}", "{0} {1}", y.Key, y.Value));
+            Console.WriteLine(String.Format("{0,-30}" + "{1:c0}", y.Key ,y.Value));
 
         }
         Console.ReadLine();
