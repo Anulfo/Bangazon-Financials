@@ -34,9 +34,9 @@ Customer                     Revenue
             cs.CommandType = CommandType.Text;
             SqliteDataReader reader;
 
-            cs.CommandText = @"SELECT CustomerFirstName || ' ' || CustomerLastName as CustomerName, " +  
-                "SUM(ProductRevenue) as ProductRevenue FROM REVENUE where customername = customername group by " +
-                "customername order by productrevenue desc";
+            cs.CommandText = @"SELECT CustomerFirstName || ' ' || CustomerLastName AS CustomerName, " +  
+                "SUM(ProductRevenue) AS ProductRevenue FROM Revenue GROUP BY " +
+                "CustomerName ORDER BY ProductRevenue desc";
             cs.Connection.Open();
             reader = cs.ExecuteReader();
             while (reader.Read())

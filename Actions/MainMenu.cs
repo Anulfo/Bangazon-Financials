@@ -62,7 +62,7 @@ x.Exit Financial Report");
                         }
                         if (selection == 5)
                         {
-                            //GetRevenuePerProduct.ReadInput();
+                            GetRevenuePerProduct.ReadInput();
                         }
                     }
                     else
