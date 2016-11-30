@@ -120,8 +120,35 @@ namespace Bangazon_Financials
                 });
 
             return reportValues;
+        }
 
+        public List<KeyValuePair<string, int>> RevenuePerProduct()
+        {
+            BangazonConnection conn = new BangazonConnection();
 
+            List<KeyValuePair<string, int>> reportValues = new List<KeyValuePair<string, int>>();
+
+            conn.execute(@"SELECT ProductName, SUM(productrevenue) as ProductTotalRevenue from revenue
+                            group by productname
+                            order by ProductTotalRevenue desc",
+                (SqliteDataReader reader) =>
+                {
+
+                    while (reader.Read())
+                    {
+                        var rawProductName = reader[0];
+                        var productNameString = rawProductName.ToString();
+                        var rawRevenuePerProduct = reader[1];
+                        var RevenuePerProductString = rawRevenuePerProduct.ToString();
+                        var revenuePerProductInteger = int.Parse(RevenuePerProductString);
+                        var straightupbull = new KeyValuePair<string, int>(RevenuePerProductString, revenuePerProductInteger);
+
+                        reportValues.Add(straightupbull);
+                    }
+
+                });
+
+            return reportValues;
         }
     }
 }
