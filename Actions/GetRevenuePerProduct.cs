@@ -56,7 +56,7 @@ Product                     Revenue
                 Console.WriteLine(String.Format("{0,-30}" + "{1:c0}", y.Key, y.Value));
             }
             Console.WriteLine("");
-            Console.WriteLine("Press a key to go back to MainMenu");
+            Console.WriteLine("Press ENTER to go back to MainMenu");
             Console.ReadLine();
         }
     }

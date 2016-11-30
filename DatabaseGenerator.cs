@@ -16,6 +16,7 @@ namespace Bangazon_Financials
         string[] customerAddressStreet = new[] { "Mallory Lane", "Carothers Pkwy", "Claybrook Lane", "Bending Creek Drive", "Old Hickory Blvd", "Harris Ave", "21st Ave N", "Plus Park Blvd", "Interstate Blvd S", "Whitney Ave", "Bell Rd", "Harding Pky", "Nolesville Road", "Charlotte Ave" };
         int[] customerZipcode = new int[] { 37013, 37072, 38461, 37115, 37116, 37201, 37211, 37216, 37222 };
         string[] productSupplierState = new string[] { "AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HA", "ID", "IL", "IN", "IA", "KA", "KY", "LA", "ME", "MD", "MS", "MC", "MN", "MI", "MO", "MT", "NB", "NV", "NH", "NJ", "NC", "NY", "NM", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "WA", "WV", "WI", "WY" };
+
         public string RandomizeCustomerProducts()
         {
             var rnd1 = rnd.Next(customersName.Length);
@@ -58,7 +59,7 @@ namespace Bangazon_Financials
         {
 
             string sql3 = "CREATE TABLE Revenue (" +
-                                "[Id] INTEGER NOT NULL CONSTRAINT \"PK_Revenue\" PRIMARY KEY AUTOINCREMENT, " +
+                                "[Id] INTEGER NOT NULL CONSTRAINT \"PK _Revenue\" PRIMARY KEY AUTOINCREMENT, " +
                                 "[ProductName] TEXT NOT NULL, " +
                                 "[ProductCost] INTEGER NOT NULL," +
                                 "[ProductRevenue] INTEGER NOT NULL, " +

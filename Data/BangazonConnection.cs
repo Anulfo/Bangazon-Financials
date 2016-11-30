@@ -10,7 +10,7 @@ namespace Bangazon_Financials.Data
     {
         private string _connectionString = $"Filename={System.Environment.GetEnvironmentVariable("REPORTING_DB_PATH")}";
 
-        public void getInfo (string query, Action<SqliteDataReader> handler)
+        public void execute (string query, Action<SqliteDataReader> handler)
         {
             //Establish connection with the database
             SqliteConnection dbconnection = new SqliteConnection(_connectionString);
@@ -22,6 +22,10 @@ namespace Bangazon_Financials.Data
             {
                 handler(reader);
             }
+
+            dbcommand.Dispose();
+            dbconnection.Close();   
+
 
         }
 
