@@ -7,7 +7,7 @@
   "dependencies": {
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
     "System.Data.SqlClient": "4.1.0"

@@ -25,9 +25,6 @@ namespace Bangazon_Financials.Data
 
             dbcommand.Dispose();
             dbconnection.Close();   
-
-
         }
-
     }
 }
